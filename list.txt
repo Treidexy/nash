@@ -1,3 +1,9 @@
 automatic file namespace
 symbol renaming?
 easy linking
+lambdas
+enum
+struct (w align)
+nameless params
+read/write perms on data (variables)
+match
