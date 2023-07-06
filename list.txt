@@ -1,2 +1,3 @@
 automatic file namespace
 symbol renaming?
+easy linking
