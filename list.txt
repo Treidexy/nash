@@ -7,3 +7,8 @@ struct (w align)
 nameless params
 read/write perms on data (variables)
 match
+multiline string
+everything is expr
+samesh types (different structs)?
+messy prot?
+refacto-meter
