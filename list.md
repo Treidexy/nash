@@ -33,6 +33,9 @@
 - `namespace` type?
 - ptr type `*mut u64`
 - array `[u8; 69_420]`
+- nameless struct (var) `let game_input: struct (0x8) { left: bool, right: bool };`
+- struct of `let old_state: struct &game_state;`
+- fn type `fn (0x64) (x: u64) -> (y?: u64)` // 0x64 byte long function struct
 ### variables
 - immutible by default
 - explicit undefined initialization `let x: u32; // not allowed` vs `let x: u32 = ?; // yes allowed`
