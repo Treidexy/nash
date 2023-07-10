@@ -1,6 +1,6 @@
 ### symbols
 - auto file namespace (like `cargo`-ish)
-- symbol renaming? `let fs => std::filesystem;`
+- reference symbol `let fs => std::filesystem;`
 - easy linking?
 - multiple names `fn absolute_value abs(?) -> ?`
 - private by default (explicit `pub`)
