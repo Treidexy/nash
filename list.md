@@ -6,6 +6,7 @@
 - private by default (explicit `pub`)
 - delete name `@delete std::filesystem;`
 - friend `struct Bogus { pub(Fred, Joe) my_thing: u32 } struct Fred {} struct Joe {}`
+- abstract symbol `let mut thing = $getHat; if no_hat() { thing = $getHair; } mynamespace::MyStruct::(thing)(self);` evals to `mynamespace::MyStruct::getHat(self) else no_hat() { mynamespace::MyStruct::getHair(self) }`
 ### abstraction
 - templates? ~ obselete by trait system?? `fn min<T>(a: T, b: T) -> T`
 - depleeted functions `fn min(a: impl Integer, b: struct Integer) -> ?`
@@ -37,6 +38,7 @@
 - shadow `struct TypeId = u64;`
 - `type` type
 - `namespace` type?
+- `symbol` type
 - ptr type `*mut u64`
 - array `[u8; 69_420]`
 - nameless struct (var) `let game_input: struct (0x8) { left: bool, right: bool };`
