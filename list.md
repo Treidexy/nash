@@ -7,6 +7,7 @@
 - delete name `@delete std::filesystem;`
 - friend `struct Bogus { pub(Fred, Joe) my_thing: u32 } struct Fred {} struct Joe {}`
 - abstract symbol `let mut thing = $getHat; if no_hat() { thing = $getHair; } mynamespace::MyStruct::(thing)(self);` evals to `mynamespace::MyStruct::getHat(self) else no_hat() { mynamespace::MyStruct::getHair(self) }`
+- weird name `let \`space case rocks\` = 69_420;`
 ### abstraction
 - templates? ~ obselete by trait system?? `fn min<T>(a: T, b: T) -> T`
 - depleeted functions `fn min(a: impl Integer, b: struct Integer) -> ?`
@@ -32,7 +33,7 @@
 - trait `trait Add<T: type> { let OutType: type; fn add(self, &T) -> OutType; }`
 - see abstraction::slated traits
 - enum `enum Number { One = 1, Two, Three = 3, Four, }`
-- flags `enum @flags Perms { Read, Write, Exec, ReadWrite = Perms::Read | Perms::Write }`?
+- flags `enum @flags Perms { Read = 0, Write = 1, Exec = 2, ReadWrite = Perms::Read | Perms::Write /* 0b011 */ }`? // use number to specify idx of bit
 - samesh (unions) `@samesh Vec2, struct { u64, u64 };`
 - samesh enum `enum Number { One = 2, Two = 3 { name: String }, }`
 - shadow `struct TypeId = u64;`
@@ -62,12 +63,15 @@
 - seperators `0b11100010_00011010`
 - hex/bin floats `0xff794201_f32` // `_` required
 - multiline string by default
+- symbol (name?) `$my_thing`
 ### tooling
 - easy refactoring
 - find references, usages, assignments, muts, etc
 - scope popping [direct from code]
 - frame popping (functions & scopes)
 - messy code meter :)
+- documentation freak // do ur docs
+- code baking ~ `let x = some_long_thing_with_vague_return_type();` -> `let x: BogoType = some_long_thing_with_vague_return_type();`
 ### misc
 - everything is expr
 - rules `@rule glGetError() == 0` // ran after each line? // maybe obselete from pure scopes?
@@ -75,4 +79,5 @@
 - comptime if/match `if const DEBUG { ... }` `match const TARGET_FRUIT { Grape -> ..., Banana -> ..., ... }`
 - delete keyword `@delete if`  // `@if` is still usable
 - ERROR HANDLING???
+
 
