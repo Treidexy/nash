@@ -12,8 +12,9 @@
 - templates? ~ obselete by trait system?? `fn min<T>(a: T, b: T) -> T`
 - depleeted functions `fn min(a: impl Integer, b: struct Integer) -> ?`
 - depleeted structs `impl Integer` = `T: Integer` vs `struct Integer` = `struct { func: *fn(), }`?
-- trait of impl `trait Int { fn inc(*mut self); }` `impl Int { fn inc(*mut self) { self++; } }`
+- trait of impl `trait Int { fn inc(mut self); }` `impl Int { fn inc(mut self) { self++; } }`
 ### functions
+- owned parameter `fn (mine: &String)`? or `fn (&mine: String)`?
 - nameless params `fn(param: u64, u64)`
 - abstract (code determined) return value `fn() -> ?`
 - abstract params `fn(param: ?) -> i32`
@@ -53,8 +54,8 @@
 - eval var `let curr => self.src[self.pos];`
 ### expressions
 - array indexing `array[idx]`
-- deref `*array`
-- implicit address access `smth.idx: *u64` vs `*smth.idx: u64`
+- deref `p*` equivalent to `p[0]`
+- implicit address access? `smth.idx: *u64` vs `smth.idx*: u64`
 - comptime eval `let pi = const arcsin(0);`
 - array/slice init `[0, 1, 2, 3]`
 - casting `f64::from(0xff77)` `0xff77.into<f64>()`
@@ -79,5 +80,5 @@
 - comptime if/match `if const DEBUG { ... }` `match const TARGET_FRUIT { Grape -> ..., Banana -> ..., ... }`
 - delete keyword `@delete if`  // `@if` is still usable
 - ERROR HANDLING???
-
+- pass by reference is default (ownership transfer must be explicit)
 
