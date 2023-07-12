@@ -14,6 +14,7 @@
 - depleeted structs `impl Integer` = `T: Integer` vs `struct Integer` = `struct { func: *fn(), }`?
 - trait of impl `trait Int { fn inc(mut self); }` `impl Int { fn inc(mut self) { self++; } }`
 ### functions
+- special functions `fn @special climb(code: i32)` `impl climb(code = 69) { ... }`
 - owned parameter `fn (mine: &String)`? or `fn (&mine: String)`?
 - nameless params `fn(param: u64, u64)`
 - abstract (code determined) return value `fn() -> ?`
