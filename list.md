@@ -14,12 +14,12 @@
 - depleeted structs `impl Integer` = `T: Integer` vs `struct Integer` = `struct { func: *fn(), }`?
 - trait of impl `trait Int { fn inc(mut self); }` `impl Int { fn inc(mut self) { self++; } }`
 ### functions
-- special functions `fn @special climb(code: i32)` `impl climb(code = 69) { ... }`
+- special functions? `fn @special climb(code: i32)` `impl climb(code = 69) { ... }`
 - owned parameter `fn (mine: &String)`? or `fn (&mine: String)`?
-- nameless params `fn(param: u64, u64)`
+- nameless params (decl only) `fn(param: u64, u64)`
 - abstract (code determined) return value `fn() -> ?`
-- abstract params `fn(param: ?) -> i32`
-- multi-return `fn(param: ?) -> (a: i32, b: ?)`
+- abstract params `fn(param) -> i32`
+- multi-return `fn(param) -> (a: i32, b: ?)`
 - optional return `fn() -> (a?: ?)`
 - one-liner `fn muladd(a: f64, b: f64, c: f64) -> a + b * c;`
 - lambda `fn() -> (?) { ... }`
@@ -58,7 +58,6 @@
 - deref? `*p` equivalent to `p[]`
 - addr of `&p`
 - pass/transfer ownership `^mystring`
-- implicit address access? `smth.idx: *u64` vs `smth.idx*: u64`
 - comptime eval `let pi = const arcsin(0);`
 - array/slice init `[0, 1, 2, 3]`
 - casting `f64::from(0xff77)` `0xff77.into<f64>()`
