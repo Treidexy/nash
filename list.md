@@ -56,8 +56,8 @@
 ### expressions
 - array indexing `array[idx]` or `array[] == array[0]`
 - deref? `*p` equivalent to `p[0]`
-- addr of `^p`
-- pass/transfer ownership `&mystring`
+- addr of `&p`
+- pass/transfer ownership `^mystring`
 - implicit address access? `smth.idx: *u64` vs `smth.idx*: u64`
 - comptime eval `let pi = const arcsin(0);`
 - array/slice init `[0, 1, 2, 3]`
