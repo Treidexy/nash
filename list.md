@@ -16,20 +16,20 @@
 ### functions
 - special functions? `fn @special climb(code: i32)` `impl climb(code = 69) { ... }`
 - owned parameter `fn (mine: &String)`? or `fn (&mine: String)`?
-- nameless params (decl only) `fn(param: u64, u64)`
+- nameless params `fn(param: u64, u64)`
 - abstract (code determined) return value `fn() -> ?`
-- abstract params `fn(param) -> i32`
-- multi-return `fn(param) -> (a: i32, b: ?)`
-- optional return `fn() -> (a?: ?)`
+- abstract params `fn(param: ?) -> i32`
+- multi-return `fn(param: ?) -> (a: i32, b: ?)`
+- optional return `fn() -> (a?: i32)`
 - one-liner `fn muladd(a: f64, b: f64, c: f64) -> a + b * c;`
 - lambda `fn() -> (?) { ... }`
-- scope function `fn something(p: *u8) { fn' count_len(p) -> (len: u64) { len = 0; loop [len]p != 0 { len++; } } }`
+- scope function? `fn something(p: *u8) { fn' count_len(p) -> (len: u64) { len = 0; loop [len]p != 0 { len++; } } }`
 - named arguments `make_rect(top: 0, left: 0, bottom: 100, right: 64)`?
-- slated functions `let square = pow(, 2);`
+- slated functions `let square = pow(, 2);`+
 - fixed len fn/scope `fn' (0x1000) my_scope()` // function is code + padding to make 0x1000 bytes long total
-- fixed address `fn &(0x401000) _start()` or `fn &(get_cheese + 0x5500) eat_cheese()`
+- fixed address `fn &(0x401000) _start()` or `fn &(&get_cheese + 0x5500) eat_cheese()`
 - no return `fn panic(msg: *struct String) -> !;`
-- cool example: `fn &(0x401000) (0xff) _start(argc (%rsp[0]): i32, argv (%rsp[1]): [*u8; argc]) -> ! {}`
+- cool example: `fn &(0x401000) (0xff) _start(argc (%rsp[0]): i32, argv (%rsp[8]): [*u8; argc]) -> ! {}`?
 ### types
 - struct `struct Vec2 (0x40) { x: f64 align 16, y: f64 align 8 size 8, }`
 - trait `trait Add<T: type> { let OutType: type; fn add(self, &T) -> OutType; }`
