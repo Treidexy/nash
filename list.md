@@ -55,7 +55,7 @@
 - eval var `let curr => self.src[self.pos];`
 ### expressions
 - array indexing `array[idx]` or `array[] == array[0]`
-- deref? `*p` equivalent to `p[0]`
+- deref? `*p` equivalent to `p[]`
 - addr of `&p`
 - pass/transfer ownership `^mystring`
 - implicit address access? `smth.idx: *u64` vs `smth.idx*: u64`
