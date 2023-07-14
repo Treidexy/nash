@@ -54,13 +54,14 @@
 - global (constants) `const str: u64 = "";`, `const mut block: [u8; 64] = [2u8; 64];`
 - eval var `let curr => self.src[self.pos];`
 ### expressions
-- array indexing `array[idx]`
-- deref `p*` equivalent to `p[0]`
+- array indexing `array[idx]` or `array[] == array[0]`
+- deref? `*p` equivalent to `p[0]`
+- addr of `^p`
+- pass/transfer ownership `&mystring`
 - implicit address access? `smth.idx: *u64` vs `smth.idx*: u64`
 - comptime eval `let pi = const arcsin(0);`
 - array/slice init `[0, 1, 2, 3]`
 - casting `f64::from(0xff77)` `0xff77.into<f64>()`
-- pass/transfer ownership `&mystring`
 ### literals
 - seperators `0b11100010_00011010`
 - hex/bin floats `0xff794201_f32` // `_` required
