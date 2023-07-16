@@ -30,6 +30,7 @@
 - fixed address `fn &(0x401000) _start()` or `fn &(&get_cheese + 0x5500) eat_cheese()`
 - no return `fn panic(msg: *struct String) -> !;`
 - cool example: `fn &(0x401000) (0xff) _start(argc (%rsp[0]): i32, argv (%rsp[8]): [*u8; argc]) -> ! {}`?
+- default args `fn peek(offset: i64 = 0);`
 ### types
 - struct `struct Vec2 (0x40) { x: f64 align 16, y: f64 align 8 size 8, }`
 - trait `trait Add<T: type> { let OutType: type; fn add(self, T) -> OutType; }`
