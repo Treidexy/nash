@@ -83,4 +83,5 @@
 - delete keyword `@delete if`  // `@if` is still usable
 - ERROR HANDLING???
 - pass by reference is default (ownership transfer must be explicit)
+- auto enum detection `enum LongName { Yes, No, Maybe, } fn do_thing(x: i32) -> LongName { return match x { 0 => Yes, 1 => No, 2 => LongName::Maybe, } }`
 
