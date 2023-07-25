@@ -23,7 +23,7 @@
 - optional return `fn() -> (a?: i32)`
 - one-liner `fn muladd(a: f64, b: f64, c: f64) -> a + b * c;`
 - lambda `fn() -> (?) { ... }`
-- scope function? `fn something(p: *u8) { fn' count_len(p) -> (len: u64) { len = 0; loop [len]p != 0 { len++; } } }`
+- scope function? `fn something(p: *u8) { fn' count_len(p) -> (len: u64) { len = 0; loop p[len] != 0 { len++; } } }`
 - named arguments `make_rect(top: 0, left: 0, bottom: 100, right: 64)`?
 - slated functions `let square = pow(, 2);`+
 - fixed len fn/scope `fn' (0x1000) my_scope()` // function is code + padding to make 0x1000 bytes long total
