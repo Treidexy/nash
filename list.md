@@ -10,8 +10,8 @@
 - weird name `let ``space case rocks`` = 69_420;` // single `, but markdown sucks
 ### abstraction
 - templates? ~ obselete by trait system?? `fn min<T>(a: T, b: T) -> T`
-- depleeted functions `fn min(a: impl Integer, b: struct Integer) -> ?`
-- depleeted structs `impl Integer` = `T: Integer` vs `struct Integer` = `struct { func: *fn(), }`?
+- depleeted functions `fn min(a: impl Integer, b: @skele Integer, c: dyn Integer) -> ?`
+- depleeted structs `impl Integer` = `T: Integer` vs `@skele Integer = struct { func: *fn(), }` vs `dyn Integer` = `struct { self: *u8, skele: @skele Integer, }`?
 - trait of impl `trait Int { fn inc(mut self); }` `impl Int { fn inc(mut self) { self++; } }`
 ### functions
 - special functions? `fn @special climb(code: i32)` `impl climb(code = 69) { ... }`
