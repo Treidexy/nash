@@ -48,6 +48,7 @@
 - nameless struct (var) `let game_input: struct (0x8) { left: bool, right: bool };`
 - struct of `let old_state: struct &game_state;`
 - fn type `fn (0x64) (x: u64) -> (y?: u64)` // 0x64 byte function struct
+- volatile return `fn read(std::io::File) -> (mut contents: String)`
 ### variables
 - immutible by default
 - explicit undefined initialization `let x: u32; // not allowed` vs `let x: u32 = ?; // yes allowed`
