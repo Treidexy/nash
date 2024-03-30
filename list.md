@@ -2,16 +2,16 @@
 - auto file namespace (like `cargo`-ish)
 - reference symbol `let fs => std::filesystem;`
 - easy linking?
-- multiple names `fn absolute_value abs(?) -> ?`
+- multiple names `fn absolute_value abs(?) -> ?`, `let game, g = Game::new();`
 - private by default (explicit `pub`)
-- delete name `@delete std::filesystem;`
-- friend `struct Bogus { pub(Fred, Joe) my_thing: u32 } struct Fred {} struct Joe {}`
+- delete name `no std::filesystem;`
+- friend `struct Bogus ( pub[Fred, Joe] my_thing: u32 ) struct Fred {} struct Joe {}`
 - abstract symbol `let mut thing = $getHat; if no_hat() { thing = $getHair; } mynamespace::MyStruct::(thing)(self);` evals to `mynamespace::MyStruct::getHat(self) else no_hat() { mynamespace::MyStruct::getHair(self) }`
 - weird name `let ``space case rocks`` = 69_420;` // single `, but markdown sucks
 ### abstraction
 - templates? ~ obselete by trait system?? `fn min<T>(a: T, b: T) -> T`
 - depleeted functions `fn min(a: impl Integer, b: @skele Integer, c: dyn Integer) -> ?`
-- depleeted structs `impl Integer` = `T: Integer` vs `@skele Integer = struct { func: *fn(), }` vs `dyn Integer` = `struct { self: *u8, skele: @skele Integer, }`?
+- depleeted structs `impl Integer` = `T: Integer` vs `@skele Integer = struct ( func: *fn(), )` vs `dyn Integer` = `struct ( self: *u8, skele: @skele Integer, )`?
 - trait of impl `trait Int { fn inc(mut self); }` `impl Int { fn inc(mut self) { self++; } }`
 ### functions
 - special functions? `fn @special climb(code: i32)` `impl climb(code = 69) { ... }`
@@ -32,20 +32,20 @@
 - cool example: `fn &(0x401000) (0xff) _start(argc (%rsp[0]): i32, argv (%rsp[8]): [*u8; argc]) -> ! {}`?
 - default args `fn peek(offset: i64 = 0);`
 ### types
-- struct `struct Vec2 (0x40) { x: f64 align 16, y: f64 align 8 size 8, }`
+- struct `struct Vec2 (0x40) ( x: f64 align 16, y: f64 align 8 size 8, )`
 - trait `trait Add<T: type> { let OutType: type; fn add(self, T) -> OutType; }`
 - see abstraction::slated traits
-- enum `enum Number { One = 1, Two, Three = 3, Four, }`
-- samesh enum `enum Number { One = 2, Two = 3 { name: String }, }`
-- flags `enum @flags Perms { Read = 0, Write = 1, Exec = 2, ReadWrite = Perms::Read | Perms::Write /* 0b011 */ }`? // use number to specify idx of bit
-- samesh (unions) `@samesh Vec2, struct { u64, u64 };`?
+- enum `enum Number ( One: 1, Two, Three: 3, Four, )`
+- samesh enum `enum Number ( One: 2, Two: 3 ( name: String ), )`
+- flags `enum @flags Perms ( Read = 0, Write = 1, Exec = 2, ReadWrite = Perms::Read | Perms::Write /* 0b011 */ )`? // use number to specify idx of bit
+- samesh (unions) `@samesh Vec2, struct ( u64, u64 );`?
 - shadow? `struct TypeId = u64;`
 - `type` type
 - `namespace` type?
 - `symbol` type
 - ptr type `*mut u64`
 - array `[u8; 69_420]`
-- nameless struct (var) `let game_input: struct (0x8) { left: bool, right: bool };`
+- nameless struct (var) `let game_input: ( left: bool, right: bool );`, `let packet: struct (0x16) ( len: u64 );`
 - struct of `let old_state: struct &game_state;`
 - fn type `fn (0x64) (x: u64) -> (y?: u64)` // 0x64 byte function struct
 - volatile return `fn read(std::io::File) -> (mut contents: String)`
@@ -55,6 +55,7 @@
 - register+ `let ptr %ax: *u8 = ?;`
 - global (constants) `const str: u64 = "";`, `const mut block: [u8; 64] = [2u8; 64];`?
 - eval var `let curr => self.src[self.pos];`
+- unleash `with self; print(name);` same as `print(self.name);`
 ### expressions
 - array indexing `array[idx]` or `array[] == array[0]`
 - deref? `*p` equivalent to `p[]`
@@ -81,8 +82,7 @@
 - rules? `@rule glGetError() == 0` // ran after each line? // maybe obselete from pure scopes?
 - easy refactoring ;)
 - comptime if/match? `if const DEBUG { ... }` `match const TARGET_FRUIT { Grape -> ..., Banana -> ..., ... }` // obselete by good optimizer?
-- delete keyword `@delete if`  // `@if` is still usable
+- delete keyword `no if`  // `@if` is still usable
 - ERROR HANDLING???
 - pass by reference is default (ownership transfer must be explicit)
 - auto enum detection `enum LongName { Yes, No, Maybe, } fn do_thing(x: i32) -> LongName { return match x { 0 => Yes, 1 => No, 2 => LongName::Maybe, } }`
-
