@@ -1,0 +1,10 @@
+- 64-bit only
+- can be interpreted
+- can be ran by source
+- hot reload
+- optimized
+- custom linking (non-standard)
+- text editor
+- node editor
+- cross-compiler
+- no vm, garbage collection, etc
