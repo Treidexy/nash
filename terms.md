@@ -3,14 +3,13 @@ Before parsing, but after lexing. Terms will be used as a layer above Tokens to 
 ### Tuples
 - opened and closed by paren
 - elements seperated by comma
-- each element has a part before the colon and after
-- colon is optional
-- ej: `(name, four five: lol)`
+- each element are in the form `_ : _ = _`
+- ej: `(name, four five: lol = 69)`
 
 ### Blocks
 - opened and closed by braces
 - elements seperated by semi
-- ej: `{ print lol; sing a song; jk }`
+- ej: `{ print lol; sing a song; jk { another block }; no need for another semi at the end! }`
 
 ### Lists
 - opened and closed by brackets
