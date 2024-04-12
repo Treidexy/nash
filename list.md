@@ -69,6 +69,7 @@
 - hex/bin floats `0xff794201_f32` // `_` required
 - multiline string by default
 - symbol frag `$my_thing`
+- enum list `enum Color(Reg, Green, Blue); Color::list == [Red, Green, Blue];`?
 ### tooling
 - easy refactoring
 - find references, usages, assignments, muts, etc
