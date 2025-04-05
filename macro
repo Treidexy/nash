@@ -1,0 +1,23 @@
+let file-open-error = {
+  let access-denied = ();
+  let out-of-memory = ();
+  let file-not-found = ();
+};
+
+let file-open-error = #enum [
+  access-denied,
+  out-of-memory,
+  file-not-found,
+];
+
+fn enum(m: macro-builder) {
+  m.open(.lbracket) -> .lbrace;
+  m.close(.rbracket) -> .rbrace;
+
+  m.pattern fn (in, out, n) {
+    let token.name name = in.match(.name);
+    in.match(.comma);
+
+    out.write[.let, .name(name), .equal, .int(n), .semi];
+  };
+}
